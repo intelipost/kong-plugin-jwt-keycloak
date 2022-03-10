@@ -176,7 +176,7 @@ local function load_consumer(consumer_id, anonymous)
         end
         return nil, err
     end
-    kong.log.debug('load_consumer(): ' .. result)
+    kong.log.debug('load_consumer(): ' .. consumer_id)
     return result
 end
 
@@ -185,7 +185,7 @@ local function load_consumer_by_custom_id(custom_id)
     if not result then
         return nil, err
     end
-    kong.log.debug('load_consumer_by_custom_id(): ' .. result)
+    kong.log.debug('load_consumer_by_custom_id(): ' .. custom_id)
     return result
 end
 
