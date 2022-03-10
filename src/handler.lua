@@ -308,7 +308,7 @@ local function match_consumer(conf, jwt)
         return false, { status = 401, message = "Unable to find consumer for token" }
     end
 
-    kong.log.debug('match_consumer() consumer=' .. consumer)
+    kong.log.debug('match_consumer() consumer=' .. consumer_id)
     if consumer then
         set_consumer(consumer, nil, nil)
     end
