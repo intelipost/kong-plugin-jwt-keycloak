@@ -293,10 +293,10 @@ local function match_consumer(conf, jwt)
     local consumer_id = jwt.claims[conf.consumer_match_claim]
 
     if conf.consumer_match_claim_custom_id then
-        consumer_cache_key = "custom_id_key_" .. consumer_id
+        local consumer_cache_key = "custom_id_key_" .. consumer_id
         consumer, err = kong.cache:get(consumer_cache_key, nil, load_consumer_by_custom_id, consumer_id, true)
     else
-        consumer_cache_key = kong.db.consumers:cache_key(consumer_id)
+        local consumer_cache_key = kong.db.consumers:cache_key(consumer_id)
         consumer, err = kong.cache:get(consumer_cache_key, nil, load_consumer, consumer_id, true)
     end
 
