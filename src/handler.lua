@@ -190,7 +190,7 @@ local function load_consumer_by_custom_id(custom_id)
 end
 
 local function set_consumer(consumer, credential, token)
-    kong.log.debug('Calling set_consumer()' .. credential)
+    kong.log.debug('Calling set_consumer()')
 
     local set_header = kong.service.request.set_header
     local clear_header = kong.service.request.clear_header
